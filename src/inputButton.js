@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
   View,
-  Text
+  Text,
+  TouchableHighlight
 } from 'react-native';
 
 import Style from './style';
@@ -9,10 +10,11 @@ import Style from './style';
 export default class InputButton extends Component {
 
   render() {
+    console.log(this.props)
     return (
-      <View style={Style.inputButton}>
+      <TouchableHighlight style={Style.inputButton} underlayColor="#193441" onPress={this.props.onPress}>
         <Text style={Style.inputButtonText}>{this.props.value}</Text>
-      </View>
+      </TouchableHighlight>
     );
   }
 }

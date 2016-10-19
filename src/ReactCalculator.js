@@ -21,13 +21,19 @@ class ReactCalculator extends Component {
     render() {
         return (
           <View style={Style.rootContainer}>
-              <View style={Style.displayContainer}></View>
+              <View style={Style.displayContainer}>
+                <Text>
+                  Heykjl;fkasj kl;asdj f;lksjd
+                </Text>
+
+                </View>
               <View style={Style.inputContainer}>
                 {this._renderInputButtons()}
               </View>
           </View>
       )
     }
+
 
     _renderInputButtons() {
         let views = [];
@@ -40,7 +46,8 @@ class ReactCalculator extends Component {
                 let input = row[i];
 
                 inputRow.push(
-                    <InputButton value={input} key={r + "-" + i} />
+                    <InputButton value={input} key={r + "-" + i}
+                      onPress={this._onInputButtonPressed.bind(this, input)}/>
                 );
             }
 
@@ -48,6 +55,10 @@ class ReactCalculator extends Component {
         }
 
         return views;
+    }
+
+    _onInputButtonPressed(input) {
+      alert(input);
     }
 }
 
