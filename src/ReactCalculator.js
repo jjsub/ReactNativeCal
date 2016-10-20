@@ -106,7 +106,7 @@ class ReactCalculator extends Component {
         <View style={Style.rootContainer}>
             <View style={Style.displayContainer}>
               <Text style={Style.displayText}>
-                🇩🇴 {this.state.inputValue}
+                🇩🇴  {this.state.inputValue}
               </Text>
 
               </View>
