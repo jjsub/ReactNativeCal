@@ -26,30 +26,24 @@ class ReactCalculator extends Component {
       previousInputValue: 0,
       inputValue: 0,
       selectedSymbol: null
-    }
+    };
   }
 
   _renderInputButtons () {
       let views = [];
-
-      for (var r = 0; r < inputButtons.length; r ++) {
-          let row = inputButtons[r];
-
-          let inputRow = [];
-          for (var i = 0; i < row.length; i ++) {
-              let input = row[i];
-
-              inputRow.push(
-                  <InputButton
-                    value={input}
-                    highlight={this.state.selectedSymbol === input}
-                    key={r + "-" + i}
-                    onPress={this._onInputButtonPressed.bind(this, input)}/>
-              );
-          }
-
-          views.push(<View style={Style.inputRow} key={"row-" + r}>{inputRow}</View>)
-      }
+      inputButtons.forEach((row, i) => {
+        let inputRow2 = [];
+        row.forEach((input) => {
+          inputRow2.push(
+              <InputButton
+                value={input}
+                highlight={this.state.selectedSymbol === input}
+                key={`item ${input}`}
+                onPress={this._onInputButtonPressed.bind(this, input)}/>
+          );
+        });
+        views.push(<View style={Style.inputRow} key={"row-" + row[i]}>{inputRow2}</View>);
+      });
 
       return views;
   }
