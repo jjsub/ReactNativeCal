@@ -15,7 +15,7 @@ const inputButtons = [
   [7, 8, 9, '*'],
   [4, 5, 6, '-'],
   [1, 2, 3, '+'],
-  [0, ' ', '.', '=']
+  ['', 0, '.', '=']
 ];
 
 class ReactCalculator extends Component {
@@ -112,7 +112,7 @@ class ReactCalculator extends Component {
         <View style={Style.rootContainer}>
             <View style={Style.displayContainer}>
               <Text style={Style.displayText}>
-                🇩🇴{this.state.inputValue}
+                🇩🇴 {this.state.inputValue}
               </Text>
 
               </View>
